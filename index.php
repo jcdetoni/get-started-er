@@ -1,8 +1,9 @@
 <?php
 echo '<pre>';
 $content = file_get_contents("access-5000.log");
+//Para testar utilize o arquivo de acesso do apache e modifique a express√£o de acordo com a sua necessidade
 
-//Filtre os acessoes ao servidor pelo ip 10.0.2.2 no dia 22 e 23 das 08:00 atÈ as 11:59 somente oque for mÈtodo POST
+//Filtre os acessoes ao servidor pelo ip 10.0.2.2 no dia 22 e 23 das 08:00 at√© as 11:59 somente oque for m√©todo POST
 $regex = '/[\n \t]*10.0.2.2 - - \[(2[2-3]\/Jun\/2018:(0[89]|1[01]):[0-5][0-9]:[0-5][0-9]) -0300\] "(POST) (.*)/';
 preg_match_all($regex ,$content, $matches);
 //print_r($matches);
